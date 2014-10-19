@@ -195,7 +195,8 @@ void prepare_move()
 	float cartesian_mm = sqrt(sq(difference[X_AXIS]) +
 							sq(difference[Y_AXIS]) +
 							sq(difference[Z_AXIS]));
-	if (cartesian_mm < 0.000001) { return; }
+    //this prevents us from extruding without moving -momo
+	//if (cartesian_mm < 0.000001) { return; }
 	
 	//calculate number of slices to divide movement
 	float seconds = 6000 * cartesian_mm / feedrate / feedmultiply;
